@@ -108,7 +108,7 @@ for image_path in TRAIN_IMAGES:
             train_data_images_with_faces.append(face_with_5_pixels_resized)
 
     if GENERATE_NON_FACES:
-        for i in range(20):
+        for i in range(35):
             for j in range(5):
                 # Select random coords
                 rand_x, rand_y = random.randint(0, image.shape[1] - int(sliding_window_size[0] * (1.25**j) + 1)), random.randint(0, image.shape[0] - int(sliding_window_size[1] * (1.25**j) + 1))
@@ -128,7 +128,7 @@ for image_path in TRAIN_IMAGES:
                     # cv.imshow("Skin Patch", skin_patch)
                     # cv.waitKey(0)
                     # print(skin_patch.mean())
-                    if skin_patch.mean() >= 70: #initial era 60 tine minte radu
+                    if skin_patch.mean() >= 85: #initial era 60 tine minte radu. apoi 70
                         non_face = image[rand_y:rand_y + int(sliding_window_size[1] * (1.25**j) + 1), rand_x:rand_x + int(sliding_window_size[0] * (1.25**j) + 1)]
                         non_face = cv.resize(non_face, (sliding_window_size[0] * image_resize_factor, sliding_window_size[1] * image_resize_factor))
                         train_data_images_without_faces.append(non_face)
