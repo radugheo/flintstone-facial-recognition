@@ -1,0 +1,10 @@
+antrenare/
+.idea/
+__pycache__/
+descriptors/
+negative_examples/
+positive_examples/
+TEMP_Gheorghe_Radu-Mihai_351
+validare/
+venv/
+save_test/
